@@ -1,8 +1,13 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet,TextInput, View} from "react-native";
+import Input from "../components/Input";
+import List from "../components/List";
 
 const HomeScreen = () => {
-  return <Text style={styles.text}>Hello World</Text>;
+  return <View>
+    <Input />
+    <List />
+  </View>
 };
 
 const styles = StyleSheet.create({
