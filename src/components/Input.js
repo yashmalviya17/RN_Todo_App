@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
-const Input = () => {
+const Input = ({list,setList}) => {
   const [todo, setTodo] = useState("");
   return (
     <View>
@@ -14,7 +14,8 @@ const Input = () => {
           setTodo(value);
         }}
         onSubmitEditing={()=>{
-            
+            setList([...list,todo])
+            setTodo("")
         }} 
       />
     </View>
@@ -26,13 +27,12 @@ export default Input;
 const styles = StyleSheet.create({
   input: {
     margin: 10,
-    borderRadius: 12,
-    borderColor: "rgba(0,0,0,0.1)",
-    borderWidth: 2,
+    borderRadius: 6,
+    elevation:5,
     paddingHorizontal: 12,
     paddingVertical: 6,
     fontSize: 18,
     backgroundColor: "white",
-    marginBottom:0
+    marginBottom:5
   },
 });
